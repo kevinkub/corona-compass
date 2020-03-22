@@ -1,143 +1,213 @@
 <template>
   <div class="content">
-    <div class="header-image">
-      <h1>Finde und biete Hilfe wo diese gebraucht wird</h1>
+    <SearchHeader />
+
+    <div class="card-container">
+      <div class="card" style="width: 18rem;">
+        <div class="card-img-top" id="help-together" />
+        <div class="card-body">
+          <h4 class="card-title">Gemeinsam helfen</h4>
+          <p
+            class="card-text"
+          >In Deutschland gibt es viele wichtige und lokale Initiativen, um Menschen in Not und Quarantäne zu helfen. Wir, CoronaCompass, wollen jeder Initiative dieselbe Chance geben, gefunden zu werden.</p>
+          <a href="https://airtable.com/shrqPlmiNVJ3kDLaq" class="btn btn-primary">Initiative einreichen</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-img-top" id="hackathon" />
+        <div class="card-body">
+          <h4 class="card-title">#wirvsvirus</h4>
+          <p
+            class="card-text"
+          >Von der Idee bis zur Umsetzung in nur 48 Stunden. Ein Team, eine Gemeinschaft - ein Ziel. CoronaCompass ist Teil des #wirvsvirus Hackathon der Bundesregierung.</p>
+          <a href="https://wirvsvirushackathon.org" class="btn btn-secondary">Mehr erfahren</a>
+        </div>
+      </div>
     </div>
-    <div class="input-group">
-      <input id="inputZip" name="inputZip" type="text" placeholder="Wo befindest du dich?" />
-      <router-link to="/initiatives" tag="button" id="helpee-button">Hilfe Suchen</router-link>
-      <router-link to="/initiatives" tag="button" id="helper-button">Hilfe Anbieten</router-link>
-    </div>
-    <h2>Categories browsing</h2>
+
+    <h4>Wer wir sind</h4>
+    <p>
+      Hi, wir sind CoronaCompass. In diesen schwierigen Zeiten, in der das Virus unserer Gesellschaft vieles abverlangt,
+      möchten wir dir helfen, Alternativen für sonst alltägliche Dinge zu finden.
+    </p>
+    <p>Bei uns findest du alle Informationen zu Hilfsangeboten aus ganz Deutschland oder deiner Region und das 100% kostenfrei.</p>
+    <p>
+      Egal ob Einkaufen in der Nachbarschaft, Unterstützung der Landwirte oder kontaktloser sozialer Austausch,
+      wir sind uns sicher, dass jeder beim Stöbern fündig wird.
+    </p>
+    <h4>Stöbere durch unsere Angebote</h4>
     <div class="categories">
-      <div class="category" v-for="category in categories" :key="category.name">
-        <!--TODO: Add category.imageUrl to data and display here-->
-        <img class="category-image" src="../assets/logo.png" alt />
-        <div class="category-name">{{ category.name }}</div>
+      <div class="category" v-for="category in categories" :key="category.title" v-on:click="$router.push({path: 'initiatives', query: { category: category.title }})">
+        <div class="category-content">
+          <div class="category-icon">
+            <i :class="'fas fa-2x fa-' + category.icon"></i>
+          </div>
+          <div class="category-name">{{ category.title }}</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import SearchHeader from "./SearchHeader";
+
 export default {
   name: "Home",
-  methods: {
-    fetchCategories() {
-      fetch("https://coronacompass.azurewebsites.net/api/GetInitiatives")
-        .then(stream => stream.json())
-        .then(data => (this.categories = data.filters.categories))
-        .catch(error => console.error(error));
-    }
-  },
+  components: { SearchHeader },
   data() {
     return {
-      categories: []
+      categories: [
+        { title: "Arbeit", icon: "briefcase" },
+        { title: "Bestellen und Liefern", icon: "shopping-basket" },
+        { title: "Bildung", icon: "book" },
+        { title: "Fitness und Wohlbefinden", icon: "heartbeat" },
+        { title: "Gewerbe und Selbstständige", icon: "store-alt" },
+        { title: "Medizinische Hilfe", icon: "user-md" },
+        { title: "Nachbarschaft", icon: "handshake" },
+        { title: "Unterhaltung und Soziales", icon: "tv" },
+        { title: "Informationen", icon: "info-circle" }
+      ]
     };
-  },
-  mounted() {
-    this.fetchCategories();
   }
 };
 </script>
 
 <style scoped>
 .content {
-  max-width: 700px;
   margin: 0 auto;
-}
-
-.content h2 {
   text-align: left;
+}
+
+.content h4 {
+  text-align: left;
+  font-weight: bold;
   color: #110133;
+  margin: 50px 0 30px;
 }
 
-.input-group {
-  border-radius: 10px;
-  margin: -28px auto 22px auto;
-  z-index: 2;
-  max-width: 500px;
-  background-color: #f6f6f6;
+.card-container {
   display: flex;
-  padding: 6px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: -5px;
+  margin-top: 20px;
 }
 
-.input-group input,
-.input-group button {
-  margin: 6px;
+h4.card-title {
+  margin: 6px 0;
 }
 
-.input-group input {
-  display: inline-block;
-  flex-basis: 1;
-  border-radius: 5px;
-  border: none;
+.card-container .card {
   flex-grow: 1;
   box-sizing: border-box;
-  box-shadow: 1px 1px 10px gray;
-  padding-left: 14px;
-}
-
-.input-group button {
-  padding: 8px;
+  margin: 5px;
   border: none;
-  color: white;
-  border-radius: 5px;
-  flex-basis: 1;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-#helpee-button {
-  background-color: #71a95a;
+.card div.card-img-top {
+  background-color: #aeaeae;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 250px;
 }
 
-#helper-button {
-  background-color: #110133;
+#hackathon {
+  background-image: url('../assets/hackathon.png');
+}
+
+#help-together {
+  background-size: cover;
+  background-image: url('../assets/together.jpg');
 }
 
 #logo {
   width: 100%;
 }
 
-.header-image {
-  background-image: url("../assets/banner-city_landing_page.png");
-  width: 100%;
-  height: 250px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
-  color: white;
-  z-index: 1;
-}
-
 .categories {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin: -15px;
+  max-width: 100vw;
 }
 
 .category {
-  background-color: white;
-  margin: 32px;
+  flex-basis: 33.333%;
+  box-sizing: border-box;
+  padding: 15px;
+  height: 120px;
+  display: flex;
 }
 
-.category-image {
-  width: 96px;
-  height: 96px;
-  margin: 4px;
+.category-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+}
+
+.category-content a {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.category-content:hover {
+  box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.category-icon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category .category-icon i.fas {
+  color: #71a95a;
+  text-align: center;
 }
 
 .category-name {
   width: 100%;
   text-align: center;
+  font-size: 14px;
+  color: #434343;
+  flex-grow: 0;
 }
 
-.header-image h1 {
-  padding: 64px;
+.btn-primary, .btn-secondary {
+  font-weight: bold;
+  font-size: 80%;
+}
+
+.btn-primary {
+  border: 0;
+  background-color: #71a95a;
+}
+.btn-secondary {
+  border: 0;
+  background-color: #919191;
+}
+
+@media (max-width: 1200px) {
+  .category {
+    flex-basis: 33.3333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .category {
+    flex-basis: 50%;
+  }
 }
 </style>
