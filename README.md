@@ -17,3 +17,9 @@ This repo is just a mirror of our Azure DevOps Repo in order to comply with the 
 ## Participate
 
 If you want to help us in pushing our plattform forward (e.g. provide a localized version, add more metadata, improve ui or ux, ...), please contact us at https://corona-compass.org/.
+
+## Acknowledgements
+
+We would like to thank everyone who put his efforts into this project during #WirVsVirusHack and thank the organisers of the event for the great opportunities we got.
+
+![#WirVsVirusHack](assets/logo_wirvsvirushack.png "#WirVsVirusHack")
