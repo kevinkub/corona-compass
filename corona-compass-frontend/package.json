@@ -3,31 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "npm run setup & vue-cli-service serve",
+    "build": "npm run setup & vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "install": "node ./data/fetch-data.js",
+    "setup": "node ./data/fetch-data.js & npm run copy:open-sans & npm run build:scss",
+    "build:scss": "node-sass src/scss/app.scss -o public/assets/css --importer node_modules/node-sass-package-importer/dist/cli.js",
+    "copy:open-sans": "copyfiles -u 3 ./node_modules/npm-font-open-sans/fonts/**/* ./public/assets/fonts/open-sans/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap": "^4.4.1",
+    "copyfiles": "^2.2.0",
     "core-js": "^3.6.4",
     "css": "^2.2.4",
+    "dotenv": "^8.2.0",
+    "node-sass": "^4.13.1",
+    "node-sass-package-importer": "^5.3.2",
+    "npm-font-open-sans": "^1.1.0",
+    "typeface-open-sans": "0.0.75",
     "vue": "^2.6.11",
-    "vue-axios": "^2.1.5",
     "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
-    "axios": "^0.19.2",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
-    "vuex": "^3.1.3"
+    "vuex": "^3.1.3",
+    "airtable": "^0.8.1"
   },
   "eslintConfig": {
     "root": true,

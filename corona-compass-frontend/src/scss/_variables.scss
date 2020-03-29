@@ -1,0 +1,79 @@
+$base-font-size-mobile: 16px;
+$base-font-size: 18px;
+
+// base
+$spacer: 1rem;
+
+// breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1285px
+) !default;
+
+$container-max-widths: (
+    sm: 728px,
+    md: 960px,
+    lg: 1140px,
+    xl: 1245px
+) !default;
+
+// colors
+$body-bg: #F5F5F5;
+$body-color: #434343;
+
+$primary: #71A95A;
+$secondary: #110133;
+$dark: #919191;
+
+$gray-100: #D4D3D3;
+
+// font
+$FontPathOpenSans: '../fonts/open-sans';
+$font-family-base: 'Open Sans', sans-serif;
+
+$font-weight-normal: 300;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+$font-size-base: 1rem;
+$font-size-xs: $font-size-base * .7779;
+$font-size-sm: $font-size-base * .8889;
+
+$h1-font-size: 1.667rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.3888rem;
+
+$headings-font-weight: $font-weight-bold;
+$headings-color: $secondary;
+
+// base components vars
+$border-radius: 10px;
+
+// button
+$btn-font-weight: $font-weight-bold;
+
+$btn-border-radius: 10px;
+$btn-border-radius-sm: 10px;
+$btn-border-radius-lg: 10px;
+
+$btn-padding-y-lg: $spacer * 1.14;
+$btn-padding-x-lg: $spacer * 1.5;
+$btn-font-size-lg: $font-size-base * 1.3889;
+
+
+// card
+$card-border-width: 0;
+$card-spacer-x: $spacer;
+
+//hr
+$hr-border-width: 0;
+$hr-border-color: transparent;
+
+// badge
+$badge-font-size: $font-size-sm;
+$badge-font-weight: $font-weight-normal;
+$badge-border-radius: 20px;
+$badge-padding-x: $spacer * 0.666;

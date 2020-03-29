@@ -1,0 +1,8 @@
+body,
+html {
+    font-size: $base-font-size-mobile;
+
+    @include media-breakpoint-up(md) {
+        font-size: $base-font-size;
+    }
+}

@@ -1,0 +1,17 @@
+@import "variables";
+
+@import "~npm-font-open-sans/open-sans";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "layout/body";
+@import "layout/header";
+@import "layout/footer";
+
+@import "boostrap/card";
+
+@import "components/hr";
+
+@import "modules/header-search";
+@import "modules/articles";
+@import "modules/results";

@@ -1,0 +1,98 @@
+.results {
+    margin-top: $spacer * 3.5;
+
+    h2 {
+        margin-bottom: $spacer * 3.5;
+    }
+
+    .result-item {
+        margin-bottom: $spacer * 5.5;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            background-color: $gray-100;
+            bottom: -$spacer * 2.75;
+            border-radius: 4px;
+            width: 80%;
+            left: 10%;
+
+            @include media-breakpoint-up(md) {
+                width: 50%;
+                left: 25%;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+
+            &:after {
+                content: none;
+            }
+        }
+
+        .badges {
+            .badge {
+                margin-right: $spacer * 0.5;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .result-header {
+            display: flex;
+            margin-bottom: $spacer * 1.666;
+            flex-direction: column;
+
+            @include media-breakpoint-up(sm) {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            h3 {
+                color: $body-color;
+                margin-right: $spacer * 0.5;
+                margin-bottom: 0;
+            }
+        }
+
+        .result-body {
+            p {
+                font-size: $font-size-sm;
+
+                @include media-breakpoint-up(sm) {
+                    font-size: $font-size-base;
+                }
+            }
+
+            p,
+            .buttons {
+                margin-top: $spacer * 1.666;
+                max-width: 80%;
+
+                > * {
+                    margin-bottom: $spacer * 0.5;
+                }
+            }
+        }
+
+        .result-logo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20%;
+            height: 100%;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}

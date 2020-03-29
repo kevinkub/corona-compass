@@ -1,5 +1,5 @@
 <template>
-<div class="content">
+<div class="container mt-5">
 <h1>Datenschutzerkl&auml;rung</h1>
 <h2>Einleitung</h2>
 <p>Mit der folgenden Datenschutzerkl&auml;rung m&ouml;chten wir Sie dar&uuml;ber aufkl&auml;ren, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die Datenschutzerkl&auml;rung gilt f&uuml;r alle von uns durchgef&uuml;hrten Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepr&auml;senzen, wie z.B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot").</p>
@@ -185,12 +185,8 @@
 
 <script>
 export default {
-    
 }
 </script>
 
 <style>
-    .content {
-        text-align: left;
-    }
 </style>

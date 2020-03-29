@@ -1,0 +1,11 @@
+.articles {
+    padding-top: $spacer * 3.5;
+
+    .card {
+        height: 100%;
+
+        .card-text {
+            padding-bottom: $spacer * 2;
+        }
+    }
+}

@@ -1,0 +1,193 @@
+.header-search {
+    margin-top: ($spacer * 3.5);
+
+    .description,
+    hr {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    .description {
+        font-size: $font-size-sm;
+    }
+
+    hr {
+        margin: ($spacer * 1.667) auto;
+        background-color: $gray-100;
+    }
+
+    .header-buttons {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        .button-wrapper {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 0;
+            position: relative;
+            margin-bottom: $spacer * 3.333;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+                margin-right: $spacer * 1.8;
+            }
+
+            &:after {
+                content: '';
+                width: 60%;
+                height: 3px;
+                position: absolute;
+                bottom: -$spacer * 1.666;
+                left: 20%;
+                background-color: $gray-100;
+                border-radius: 3px;
+
+                @include media-breakpoint-up(md) {
+                    width: 3px;
+                    height: 2rem;
+                    right: $spacer * -0.9;
+                    top: 1.333rem;
+                    bottom: auto;
+                    left: auto;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                &:after {
+                    content: none;
+                }
+            }
+
+            .btn {
+                display: block;
+            }
+
+            .help {
+                font-size: $font-size-sm;
+                color: $dark;
+                padding: ($spacer * 0.5) $spacer 0 $spacer;
+                margin: 0;
+            }
+        }
+    }
+
+    .header-form {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        .form-control {
+            font-size: 1.388rem;
+            height: 100%;
+            border-width: 2px;
+            padding: 1.2rem 1rem;
+            margin-right: 1.666rem;
+            border-color: $dark;
+            color: $secondary;
+            font-weight: $font-weight-bold;
+
+            &:placeholder-shown {
+                color: $dark;
+                font-weight: $font-weight-normal;
+            }
+
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-width: 0;
+
+            @include media-breakpoint-up(md) {
+                border-bottom-left-radius: $btn-border-radius;
+                border-bottom-right-radius: $btn-border-radius;
+                border-bottom-width: 2px;
+            }
+        }
+
+        .dropdown {
+            width: 100%;
+
+            @include media-breakpoint-up(md) {
+                width: auto;
+            }
+
+            .toggle-icon {
+                background-color: $white;
+                border-radius: $border-radius;
+                color: $dark;
+
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                width: 46px;
+                border: 2px $dark solid;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .btn {
+                border: 0;
+                position: relative;
+                width: 100%;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+
+                @include media-breakpoint-up(md) {
+                    border-top-left-radius: $btn-border-radius;
+                    border-top-right-radius: $btn-border-radius;
+                }
+
+                &.btn-primary .toggle-icon {
+                    color: $primary;
+                    border-color: $primary;
+                }
+
+                &.btn-secondary .toggle-icon {
+                    color: $secondary;
+                    border-color: $secondary;
+                }
+
+                &.btn-dark .toggle-icon {
+                    color: $dark;
+                    border-color: $dark;
+                }
+            }
+
+            .dropdown-menu {
+                padding: 0;
+                background-color: $white;
+                border: 0;
+                width: 100%;
+                overflow: hidden;
+                margin: -$border-radius 0 0;
+                border-radius: 0 0 $border-radius $border-radius;
+
+                .btn {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 3px;
+                    border-radius: 0;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

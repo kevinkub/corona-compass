@@ -3,6 +3,7 @@ node_modules
 /dist
 
 # local env files
+.env
 .env.local
 .env.*.local
 
@@ -19,3 +20,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+public/assets/css
+public/assets/fonts
+!public/assets/css/.keep
+!public/assets/fonts/.keep
+src/data.json

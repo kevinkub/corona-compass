@@ -1,0 +1,11 @@
+header {
+    padding-top: $spacer * 3.5;
+
+    .brand {
+        .brand-img {
+            @extend .img-fluid;
+
+            max-width: 426px;
+        }
+    }
+}
