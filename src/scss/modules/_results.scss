@@ -2,28 +2,13 @@
     margin-top: $spacer * 3.5;
 
     h2 {
-        margin-bottom: $spacer * 3.5;
+        @extend .h1;
+        margin-bottom: $spacer * 1.5;
     }
 
-    .result-item {
-        margin-bottom: $spacer * 5.5;
+    .card {
+        margin-bottom: $spacer * 2.5;
         position: relative;
-
-        &:after {
-            content: '';
-            position: absolute;
-            height: 3px;
-            background-color: $gray-100;
-            bottom: -$spacer * 2.75;
-            border-radius: 4px;
-            width: 80%;
-            left: 10%;
-
-            @include media-breakpoint-up(md) {
-                width: 50%;
-                left: 25%;
-            }
-        }
 
         &:last-child {
             margin-bottom: 0;
@@ -61,14 +46,6 @@
         }
 
         .result-body {
-            p {
-                font-size: $font-size-sm;
-
-                @include media-breakpoint-up(sm) {
-                    font-size: $font-size-base;
-                }
-            }
-
             p,
             .buttons {
                 margin-top: $spacer * 1.666;
@@ -76,6 +53,18 @@
 
                 > * {
                     margin-bottom: $spacer * 0.5;
+                }
+            }
+
+            p {
+                font-size: $font-size-sm;
+
+                @include media-breakpoint-up(sm) {
+                    font-size: $font-size-base;
+                }
+
+                @include media-breakpoint-up(md) {
+                    padding-right: $spacer * 4;
                 }
             }
         }
@@ -91,7 +80,12 @@
             align-items: center;
 
             img {
+                height: 100%;
+                width: 100%;
                 object-fit: contain;
+                overflow: hidden;
+                max-width: 200px;
+                max-height: 150px;
             }
         }
     }

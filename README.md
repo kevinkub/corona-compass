@@ -4,15 +4,18 @@ CoronaCompass is a web plattform that enables citizens to find help offerings an
 
 ## Technologies
 
-We use a Vue.js frontend and a custom Node.js backend to deliver our application and data to our users. Our data is held in a Airtable.com document for ease of use and accessability.
+We use a Vue.js frontend. Our data is held in a Airtable.com document for ease of use and accessability.
 
-Our backend application is fully cors-enabled and can be used for other applications.
+## Installation
 
-Hosting is provided free of charge by Azure (Thanks to Microsoft). We are using an app-service for frontend hosting and a "function" aka serverless computing for our backend service to ensure scalability in case of massive increases in visitor numbers.
+Download this repository using `git pull`.
 
-The code is originally hosted on Azure DevOps. [Backend](https://dev.azure.com/corona-compass/corona-compass-backend) and [Frontend](https://dev.azure.com/corona-compass/corona-compass-frontend) are split into seperate repositories in order to make it easy to setup continous delivery to our Azure Services. However we do not make use of any proprietary Azure technologies, so that hosting on a custom server or another cloud platform should be trivial. 
+Afterwards copy the file __.env.default__ to .env and insert your Airtable API-Key and the bases identifier. These information can be obtined from https://airtable.com/api after you recieve access to our workspace.
 
-This repo is just a mirror of our Azure DevOps Repo in order to comply with the rules of #WirVsVirusHack and to make our code more accessible.
+To install node dependencies and download a local copy of the Aitable database by running `npm install`
+follwed by `npm run setup` to copy some assets to their right folders.
+
+Finally you can run `npm run serve` to start a local test-server. You can modify any __.vue__ file and changes should be reflected immediately. Every change that makes it to the master will be live within about 20 seconds on our website.
 
 ## Participate
 

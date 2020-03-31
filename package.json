@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "npm run setup & vue-cli-service serve",
+    "serve": "npm run setup & npm run watch:scss & vue-cli-service serve",
     "build": "npm run setup & vue-cli-service build",
     "lint": "vue-cli-service lint",
     "install": "node ./data/fetch-data.js",
     "setup": "node ./data/fetch-data.js & npm run copy:open-sans & npm run build:scss",
     "build:scss": "node-sass src/scss/app.scss -o public/assets/css --importer node_modules/node-sass-package-importer/dist/cli.js",
+    "watch:scss": "npm run build:scss -- -w",
     "copy:open-sans": "copyfiles -u 3 ./node_modules/npm-font-open-sans/fonts/**/* ./public/assets/fonts/open-sans/"
   },
   "dependencies": {

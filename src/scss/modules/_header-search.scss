@@ -26,6 +26,11 @@
 
         @include media-breakpoint-up(md) {
             flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-wrap: nowrap;
         }
 
         .button-wrapper {
@@ -36,6 +41,16 @@
             margin-bottom: $spacer * 3.333;
 
             @include media-breakpoint-up(md) {
+                margin-bottom: $spacer;
+                margin-left: $spacer;
+
+                &:first-child,
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
                 margin-bottom: 0;
                 margin-right: $spacer * 1.8;
             }
@@ -57,6 +72,17 @@
                     top: 1.333rem;
                     bottom: auto;
                     left: auto;
+                    content: none;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    width: 3px;
+                    height: 2rem;
+                    right: $spacer * -0.9;
+                    top: 1.333rem;
+                    bottom: auto;
+                    left: auto;
+                    content: none;
                 }
             }
 
@@ -70,6 +96,7 @@
 
             .btn {
                 display: block;
+                white-space: nowrap;
             }
 
             .help {

@@ -1,6 +1,8 @@
 <template>
   <div class="container mt-5">
-    <iframe class="airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shroD98L9SlzVKFPG?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="2048" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <div class="card overflow-hidden">
+      <iframe class="airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shroD98L9SlzVKFPG?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="2048" style="background: transparent;"></iframe>
+    </div>
   </div>
 </template>
 

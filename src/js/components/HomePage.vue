@@ -29,7 +29,7 @@
                                 <i class="fa fa-hand-holding-heart"></i> Hilfe anbieten
                             </router-link>
                             <p class="help">
-                                Du möchtest deine Hilfe anbieten und suchst nach einem Angebot.
+                                Für Helden, die ihre Hilfe anbieten wollen.
                             </p>
                         </div>
 
@@ -38,7 +38,7 @@
                                 <i class="fa fa-heart"></i> Initiative einreichen
                             </router-link>
                             <p class="help">
-                                Lass uns dir dabei helfen deine Initiative noch großartiger zu machen.
+                                Trage vielversprechende Initiativen ein, damit sie noch mehr Reichweite bekommen.
                             </p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 Quarantäne helfen. Unsere Mission bei CoronaCompass ist es jene Initiativen dabei zu
                                 Unterstützen möglichst viele Menschen zu erreichen.
                             </p>
-                            <router-link to="/initiative-eintragen" class="btn btn-primary">
+                            <router-link to="/initiative-eintragen" class="btn btn-dark">
                                 <i class="fa fa-heart"></i> Hilfeangebot eintragen
                             </router-link>
                         </div>
