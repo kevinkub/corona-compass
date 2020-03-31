@@ -64,7 +64,7 @@
                                 Unterstützen möglichst viele Menschen zu erreichen.
                             </p>
                             <router-link to="/initiative-eintragen" class="btn btn-dark">
-                                <i class="fa fa-heart"></i> Hilfeangebot eintragen
+                                <i class="fa fa-heart"></i> Hilfsangebot eintragen
                             </router-link>
                         </div>
                     </div>
