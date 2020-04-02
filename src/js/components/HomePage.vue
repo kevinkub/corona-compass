@@ -7,7 +7,7 @@
                     <h1>Helfen und Hilfe finden.</h1>
                     <p class="description">
                         Bei uns findest du alle Informationen zu Hilfsangeboten aus ganz Deutschland oder deiner Region und
-                        das 100% kostenfrei.
+                        das 100 % kostenfrei.
                     </p>
                     <p class="description">
                         Egal ob Einkaufen in der Nachbarschaft, Unterstützung der Landwirte oder kontaktloser sozialer
